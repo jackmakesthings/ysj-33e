@@ -1,0 +1,18 @@
+- var sublink, sublink2, sublink3=false, link, links = [["residences", "interiors", "floorplans"],["building","history","lifestyle","architecture"],["neighborhood"],["home"],["the atturbury mansion"],["team"],["contact"]]
+header.site-header(role="banner", data-js="sticky")
+  nav.primary-nav(role="navigation")
+    ul.menu
+      - each link, l in links
+        li
+          a(href="/#{link[0]}.html",rel="", class="nav-#{link[0]}") #{link[0]}
+          - if (link.length > 1)
+              sublink = link[1]
+              sublink2 = link[2]
+              if (link.length == 4)
+                sublink3 = link[3]
+              ul.sub-menu
+                li: a(href="/#{sublink}.html",rel="", class="subnav-#{sublink}") #{sublink}
+                li: a(href="/#{sublink2}.html",rel="", class="subnav-#{sublink2}") #{sublink2}
+                - if (link.length == 4)
+                  li: a(href="/#{sublink3}.html",rel="", class="subnav-#{sublink3}") #{sublink3}
+

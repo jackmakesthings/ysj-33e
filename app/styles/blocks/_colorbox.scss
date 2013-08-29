@@ -1,0 +1,32 @@
+/*==========  Colorbox  ==========*/
+
+:focus {
+	border:inherit; outline:none;
+	// @include box-shadow(none);
+	@include appearance(none);
+}
+
+#cboxOverlay {
+	background:rgba(0,0,10,0.9) !important;
+	width:100%; height:100%;
+	left:0; right:0; top:0; bottom:0;
+	position:fixed;
+	}
+
+#cboxNext, #cboxPrevious, #cboxClose {
+	@extend %button;
+	@include appearance(none);
+	@include box-shadow(none);
+	border:none;
+	position:absolute;
+	top:50%;
+	color:white;
+	font-size:em(28);
+	padding:0;
+	cursor:pointer;
+}
+
+#cboxNext { right:em(-20); }
+#cboxPrevious { left:em(-20); }
+#cboxClose { top:em(-5); right:em(-5); font-size:em(24); width:1em; }
+#cboxClose:before, #cboxPrevious:before, #cboxNext:before { cursor:pointer; }

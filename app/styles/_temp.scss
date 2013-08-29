@@ -1,0 +1,28 @@
+// temp.scss - for prototyping and quickfixes only
+
+//note to self: tweak/break @ 960px
+
+main {
+	// padding:0 3em 3em;
+	// background: transparentize(white,0.7);
+	min-height:30em;
+}
+
+// .primary-nav .menu { @include row-list($type:"table"); }
+// .menu > li > a { width:calc(60em/8); }
+
+.debug {
+	background:transparentize(white,0.8);
+	padding:5px;
+	display:block;
+	border:1px solid $blue;
+}
+
+.debug-block {
+	margin:2em 0 4em;
+	clear:both;
+	display:block;
+	overflow:hidden;
+}
+
+.site-info { border-top:1px solid white; }

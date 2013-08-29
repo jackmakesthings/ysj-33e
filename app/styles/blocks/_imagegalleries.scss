@@ -1,0 +1,57 @@
+// image galleries
+.images { text-align:center; padding-top:em(60); }
+.gallery-thumbs {
+	display:inline-block;
+	margin:auto;
+	li {
+		display:inline-block;
+		padding:em(8);
+	}
+}
+
+.thumb-link {
+		position:relative;
+		display:inline-block;
+		background:black;
+		max-height:100%;
+		overflow:hidden;
+			img {
+				@extend %anim;
+				display:block;
+			}
+			span {
+			@extend %anim;
+			line-height:1;
+			width:em(95,18);
+			border:1px solid white;
+			border-style:solid none;
+			position:absolute;
+			top:50%; margin:auto; left:0; right:0;
+			padding:0.3em 0 0.1em;
+			color:white;
+			letter-spacing:.15em;
+			@include opacity(0);
+		}
+		&:hover {
+			img { @include opacity(0.15); }
+			span {
+				@include opacity(1);
+				 }
+		}
+
+		&.small {
+			span {
+				margin-top:em(-12);
+				font-size:em(18);
+				}
+		}
+
+		&.big {
+			span {
+				font-size:em(21);
+				width:33%;
+				margin-top:em(-14);
+			}
+		}
+	}
+

@@ -1,0 +1,44 @@
+.hero-img {
+	@include fullwidth;
+}
+.showcase {
+	top:0; bottom:10%;
+	left:0; right:0; width:100%;
+	position:absolute;
+	@include bg-stretch;
+}
+
+.bg {
+	position:absolute;
+	width:100%;
+	left:0; right:0;
+	height:160%;
+	background-attachment:fixed;
+	background-size:cover;
+
+	&.first {
+		top:0;
+	}
+}
+
+.page {
+	// position:absolute;
+	// top:90%;
+	margin-top:40%;
+	// background-attachment:fixed;
+	// width:100%;
+	min-height:50%;
+	margin-left:-1em;
+	margin-right:-1em;
+	position:relative;
+	display:block;
+	@include background-image(linear-gradient($blue 70%, $darkblue 150%));
+	&.second { 	@include background-image(linear-gradient($blue 0%, $darkblue 100%, $darkblue)); }
+	&.last { padding-bottom:5%; }
+}
+
+.showcase.second {
+	top:190%;
+	position:absolute;
+
+}

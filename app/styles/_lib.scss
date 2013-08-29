@@ -1,0 +1,160 @@
+// mixins, functions, etc.
+
+// convert px to em
+// ex: .element { font-size: em(24) } (compiles to font-size:2.4em)
+// ex: .element { font-size: em(24,12) } (compiles to font-size:2em)
+
+@function em($target, $context: 10) {
+	@return ($target / $context) * 1em;
+}
+
+// clearing
+
+@mixin clear {
+	width:100%;
+	float:none;
+	clear:both;
+	&:before, &:after {
+		content:"";
+		display:table;
+		width:100%;
+		clear:both;
+		}
+}
+
+// stretching past the grid
+@mixin fullwidth {
+	position:fixed;
+	left:0; right:0; top:0;
+	width:100%; height:auto;
+	$dev:true;
+	@if($dev==true) { height:300px; }
+}
+
+@mixin bg-stretch {
+	background-position:center;
+	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+}
+
+// list styles
+@mixin row-list($type:"table", $center:true) {
+	width: auto;
+	float: none;
+	list-style: none;
+	@if($center) { text-align:center; }
+	@if($type == "table") { display: table; }
+	@if($type == "floats" or $type == "iblocks") { display:block; }
+
+	a {
+		display: block;
+		text-align: center;
+	}
+}
+
+@mixin list-items($type:"table", $center:true) {
+	margin: 0;
+	padding: 0;
+	@if($type == "table") { display: table-cell; }
+	@if($type == "floats") { display:block; float:left; }
+	@if($type == "iblocks") { display:inline-block; float:none; }
+}
+
+// dropdowns
+
+@mixin has-dropdown() {
+	list-style:none;
+	padding:0;
+	position:relative;
+}
+
+@mixin is-dropdown($open:false, $drop:$nav-height) {
+	$nav-height:3em !default;
+	position: absolute;
+
+	@if($open) {
+		display:block;
+		height:auto;
+		z-index:100;
+		margin-top:-1px;
+	}
+	@else {
+		display:none;
+		height:0;
+		overflow:hidden;
+		z-index:-1;
+	}
+}
+
+@mixin dropdown-nav() {
+	@include has-dropdown;
+	.sub-menu { @include is-dropdown($open:false); }
+	> li:hover .sub-menu,
+	.sub-menu:hover { @include is-dropdown($open:true); }
+}
+
+%em-text {
+	font-family:'ps-light_italic';
+	color:$aqua;
+	font-size:em(11);
+	line-height:2;
+}
+
+%button {
+	background:$aqua;
+	border-radius:50%;
+	// clear:both;
+	display:inline-block;
+	margin: auto;
+	text-align:center;
+}
+
+@mixin hover1($bg:$aqua, $bg2:$blue) {
+	@include single-transition(all, 0.2s, ease-in-out, 0s);
+	background-clip:content-box;
+	border:2px solid transparent;
+	padding:2px;
+	cursor:pointer;
+	&:hover {
+		background-color:transparent;
+		border-color:$bg;
+		color:$bg;
+		}
+	&:active {
+		opacity:0.85;
+		background-color:rgba(0,0,5,0.25);
+		color:transparentize($bg,0.5);
+		// border-color:transparentize($bg,0.7);
+		box-shadow:inset 0 2px 0 2px rgba(0,0,5,0.5);
+	}
+}
+
+@mixin circled-list($li:"li", $counter:"counter1", $size:23, $font:12, $customtxt:false, $custombg:false) {
+	list-style:none;
+	counter-reset:$counter;
+	padding:0;
+	#{$li} {
+		counter-increment:unquote($counter);
+		margin-bottom:1.5em;
+		left:1.25*em($size, $font);
+		position:relative;
+		&:before {
+			@extend %button;
+			font-size:em($font);
+			width:em($size, $font);
+			vertical-align:middle;
+			text-align:center; letter-spacing:0;
+			line-height:em($size,$font);
+			margin-right:0.5em;
+			margin-left:-1.25*em($size,$font);
+			content:counter(unquote($counter));
+			@if($customtxt) { color: $customtxt; }
+			@if($custombg) { background-color:unquote($custombg); }
+		}
+	}
+}
+
+%anim {
+	@include single-transition(all, 0.3s, ease-in-out, 0s);
+}

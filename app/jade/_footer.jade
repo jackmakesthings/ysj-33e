@@ -1,0 +1,11 @@
+footer.site-info(role="contentinfo")
+  address.contact-info
+    | 33 East 74th Street, New York NY 1xxxx
+    a(href="tel:5555555555") (555) 555-5555
+    a(href="mailto:info@33east74.com") info@33east74.com
+script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js").
+script(src="/scripts/jquery.colorbox.js").
+script(type="text/javascript").
+  $(document).ready(function(){
+    $('.thumbnail a').colorbox({maxHeight:"90%", fixed:true});
+  });

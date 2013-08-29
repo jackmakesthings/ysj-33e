@@ -1,0 +1,23 @@
+// _z-indexes.scss
+
+// sticky/persistent elements
+
+.site-header:after {
+	z-index:0;
+}
+
+.site-header, .site-info {
+	z-index:100;
+}
+
+.sub-menu { z-index:50; }
+
+a.nav-home {
+	position:relative;
+	z-index:150;
+}
+
+#cboxOverlay { z-index:400; }
+#colorbox { z-index:500;}
+
+// keep the showcase out of the way

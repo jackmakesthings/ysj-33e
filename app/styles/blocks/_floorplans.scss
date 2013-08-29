@@ -1,0 +1,55 @@
+// .plan-nav, .plan-gallery { float:left; }
+.plan-gallery {
+	@include span-columns(7 omega);
+	}
+
+.plan-nav {
+	text-align:center;
+	@include span-columns(4);
+	.content-image { margin:auto; }
+}
+.plans {
+	text-align:left;
+	margin-top:em(30);
+	border-top:2px solid $aqua;
+	padding-top: em(30);
+		li {
+		float:left;
+		@include nth-omega(2n);
+		list-style:none;
+		}
+}
+
+.plan-link {
+	font-size:em(17);
+	display:block;
+	line-height:1;
+	margin:0; padding:em(15,17) 0;
+	color:$aqua;
+	letter-spacing:0.15em;
+		&:hover, &:active { color:white; }
+}
+
+.plan-gallery {
+	position:relative;
+	text-align:center;
+	display:block;
+	min-width:em(530);
+}
+
+	.ar2,
+	.al2,
+	.i-left, .i-right {
+		@extend %button;
+		position:absolute;
+		z-index:300;
+		top:50%;
+		margin-top:em(-14);
+		left:0;
+		// width:em(28); height:em(28);
+		font-size:em(28,10);
+		padding:0;
+		@include hover1;
+	}
+	.ar2, .i-right { left:auto; right:0; }
+

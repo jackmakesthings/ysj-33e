@@ -1,0 +1,22 @@
+//- - var links = ["residences","buildings","neighborhood","home","the attenbury mansion","team","contact"]
+- var links, images, images2, thumb, content, sublink, plans, team_items, map, points;
+  links = [["residences", "sublink1", "sublink2"],["buildings"],["neighborhood"],["home"],["the atturbury mansion"],["team"],["contact"]]
+  image = 'http://fakeimg.pl/1000x450/d2d1c6/fff/?text=img'
+  content = "hello world"
+  sublink = ''
+  images = ["/images/temp/146-1.png","/images/temp/146-2.png","/images/temp/146-3.png","/images/temp/146-4.png", "/images/temp/146-5.png", "/images/temp/146-6.png"]
+  images2 = ["/images/temp/146-2.png","/images/temp/146-3.png","/images/temp/146-4.png", "/images/temp/146-5.png"]
+  plans = [{txt:"Residence 3A", ref:"http://fakeimg.pl/528x340/68c7c5/fff/?text=528x340"},  {txt:"Residence 3B", ref:"http://fakeimg.pl/528x340/58b7b5/fff/?text=528x340"}, {txt:"Residence 4A", ref:"http://fakeimg.pl/528x340/187775/fff/?text=528x340"},  {txt:"Residence 4B", ref:"http://fakeimg.pl/528x340/187775/fff/?text=528x340"},  {txt:"Residence 5A", ref:"http://fakeimg.pl/528x340/187775/fff/?text=528x340"}, {txt:"Residence 5B", ref:"http://fakeimg.pl/528x340/187775/fff/?text=528x340"}, {txt:"Penthouse 1", ref:"http://fakeimg.pl/528x340/187775/fff/?text=528x340"}, {txt:"Penthouse 2", ref:"http://fakeimg.pl/528x340/187775/fff/?text=528x340"}]
+  team_items =[{logo:'http://fakeimg.pl/300x130/263653/ffffff/?text=LOGO&font=museo', name:"Champalimaud Interior Architecture & Design", copy:"led by alexandra champalimaud, who was inducted into the interior design hall of fame in 2012, champalimaud is a full service interior design firm specializing in high-end luxury. past projects include the dorchester in london, the bel-air in los angeles and the carlyle and waldorf astoria in new york."}, {logo:'http://fakeimg.pl/300x130/263653/ffffff/?text=LOGO&font=bebas', name:"JZS Madison, LLC", copy:"JZS madison, llc is led by real estate investor, healthcare entrepreneur and philanthropist daniel e straus. mr. straus has owned and developed over 10 million square feet of properties over the past 25 years."}, {logo:'http://fakeimg.pl/300x130/263653/ffffff/?text=LOGO', name:"Douglas Elliman Development Marketing", copy:"douglas elliman development marketing, a branch of douglas elliman real estate, ranks amongst new york city’s largest and most prominent sales and marketing firms. drawing from decades of experience the elliman team offers a complete suite of real estate services, market specific knowledge and comprehensive in-house research. through a strategic international partnership with knight frank residential, the world’s largest privately owned property consultancy, the company also markets their properties to global audiences in 43 countries."}]
+  map = ['Christian Louboutin', 'Metropolitan Museum', 'Guggenheim', 'Whitney Museum', 'Sant Ambroeus', 'Cafe Boulud', 'Daniel Restaurant', 'Ralph Lauren Rhinelander Mansion', 'Prada', 'Central Park South Horses']
+
+!!!
+html
+  head
+    title 33e 74th Street
+    include _scripts
+  body
+    include _header
+    block content
+  include _footer
+

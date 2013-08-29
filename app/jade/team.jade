@@ -1,0 +1,33 @@
+-var team, team_items
+  page1 ='team'
+  hero1 = "/images/hero/residences.jpg"
+  copy1 = 'Hello world'
+  team = {pagename:page1, hero:hero1, copy:copy1}
+
+  team_item1 = { logo:'http://fakeimg.pl/300x130/263653/ffffff/?text=LOGO&font=museo', name:"Champalimaud Interior Architecture & Design", copy:"led by alexandra champalimaud, who was inducted into the interior design hall of fame in 2012, champalimaud is a full service interior design firm specializing in high-end luxury. past projects include the dorchester in london, the bel-air in los angeles and the carlyle and waldorf astoria in new york."}
+  team_item2 = { logo:'http://fakeimg.pl/300x130/263653/ffffff/?text=LOGO&font=bebas', name:"JZS Madison, LLC", copy:"JZS madison, llc is led by real estate investor, healthcare entrepreneur and philanthropist daniel e straus. mr. straus has owned and developed over 10 million square feet of properties over the past 25 years."}
+  team_item3 = { logo:'http://fakeimg.pl/300x130/263653/ffffff/?text=LOGO', name:"Douglas Elliman Development Marketing", copy:"douglas elliman development marketing, a branch of douglas elliman real estate, ranks amongst new york city’s largest and most prominent sales and marketing firms. drawing from decades of experience the elliman team offers a complete suite of real estate services, market specific knowledge and comprehensive in-house research. through a strategic international partnership with knight frank residential, the world’s largest privately owned property consultancy, the company also markets their properties to global audiences in 43 countries."}
+  team_items = [team_item1, team_item2, team_item3]
+
+!!!
+html
+  head
+    title #{team.pagename} - 33e 74th Street
+    include _scripts
+  body
+    include _header
+  div.bg.first(style="background-image:url(#{team.hero})")
+    a#team.
+  div.page.first
+    h1.page-header= team.pagename
+    main.page-content(role="main")
+      ul.team
+      - each item, t in team_items
+        li.team-member
+          aside.content-aside
+            img.team-image(src!=item.logo,title!=item.name,alt=item.name)
+          div.content-text
+            h2.team-name= item.name
+            p!= item.copy
+  include _footer
+

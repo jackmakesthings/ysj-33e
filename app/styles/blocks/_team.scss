@@ -1,0 +1,15 @@
+.team-member {
+	display:table;
+	border-bottom:2px solid aqua;
+	&:last-child { border:none; }
+	aside, div {
+		display:table-cell;
+		padding-top:50px;
+		padding-bottom:50px;
+		border:none;
+		}
+	div { padding-right:columns(1); }
+}
+.team-name {
+	@extend %em-text;
+}

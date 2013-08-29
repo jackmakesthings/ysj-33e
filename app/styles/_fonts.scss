@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'ps-regular';
+    src: url('fonts/plutosansregular-webfont.eot');
+    src: url('fonts/plutosansregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/plutosansregular-webfont.woff') format('woff'),
+         url('fonts/plutosansregular-webfont.ttf') format('truetype'),
+         url('fonts/plutosansregular-webfont.svg#pluto_sans_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ps-regular_italic';
+    src: url('fonts/plutosansregular-italic-webfont.eot');
+    src: url('fonts/plutosansregular-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/plutosansregular-italic-webfont.woff') format('woff'),
+         url('fonts/plutosansregular-italic-webfont.ttf') format('truetype'),
+         url('fonts/plutosansregular-italic-webfont.svg#pluto_sansregular_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ps-light';
+    src: url('fonts/plutosanslight-webfont.eot');
+    src: url('fonts/plutosanslight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/plutosanslight-webfont.woff') format('woff'),
+         url('fonts/plutosanslight-webfont.ttf') format('truetype'),
+         url('fonts/plutosanslight-webfont.svg#pluto_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ps-light_italic';
+    src: url('fonts/plutosanslight-italic-webfont.eot');
+    src: url('fonts/plutosanslight-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/plutosanslight-italic-webfont.woff') format('woff'),
+         url('fonts/plutosanslight-italic-webfont.ttf') format('truetype'),
+         url('fonts/plutosanslight-italic-webfont.svg#pluto_sanslight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ps-medium';
+    src: url('fonts/plutosansmedium-webfont.eot');
+    src: url('fonts/plutosansmedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/plutosansmedium-webfont.woff') format('woff'),
+         url('fonts/plutosansmedium-webfont.ttf') format('truetype'),
+         url('fonts/plutosansmedium-webfont.svg#pluto_sansmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'icons';
+    src:url('fonts/icons.eot');
+    src:url('fonts/icons.eot?#iefix') format('embedded-opentype'),
+        url('fonts/icons.woff') format('woff'),
+        url('fonts/icons.ttf') format('truetype'),
+        url('fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'icons';
+    src:url('fonts/icons.eot');
+    src:url('fonts/icons.eot?#iefix') format('embedded-opentype'),
+        url('fonts/icons.woff') format('woff'),
+        url('fonts/icons.ttf') format('truetype'),
+        url('fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'icons';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="i-"] {
+*/
+.i-left, .i-up, .i-right, .i-close, .i-cancel, .i-cross, .i-chevron-sign-left, .i-chevron-sign-right, .i-chevron-sign-up, .i-chevron-sign-down {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.i-left, .i-up, .i-right, .i-down, .scroll-down {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.i-left:before {
+    content: "\6c";
+}
+.i-up:before {
+    content: "\75";
+}
+.i-right:before {
+    content: "\72";
+}
+.i-down:before, .scroll-down:before {
+    content: "\64";
+}
+
+.i-close:before { content: "\78"; }
+

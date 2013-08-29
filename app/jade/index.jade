@@ -1,0 +1,129 @@
+extends layout
+
+block content
+  div.showcase(data-img="#{image}", style="background-image:url(#{image})")
+  div.page
+    h1.page-header h1.page-header
+    main.page-content(role="main")
+      //- ###################################
+      div.debug-block
+        section.debug.full .full
+        section.debug.third .third
+        section.debug.two-thirds.omega .two-thirds
+        section.debug.half .half
+        section.debug.half .half
+        section.debug.five .five
+        section.debug.seven .seven
+        section.debug.quarter .quarter
+        section.debug.three-quarters .three-quarters
+        section.debug.sixth .sixth
+        section.debug.sixth .sixth
+        section.debug.sixth .sixth
+        section.debug.sixth .sixth
+        section.debug.sixth .sixth
+        section.debug.sixth.omega sixth
+        section.debug.ten .ten
+        section.debug.two.omega .sixth
+      hr
+      div.debug-block
+        //- ###################################
+        aside.content-aside
+          img.content-image(src='http://fakeimg.pl/200x150/ccc/?text=img',)
+        //- ###################################
+        div.content-text
+          p.
+            aside.content-aside &gt; img.content-image to the left <br>
+            div.content-text &gt; p &gt; this text<br>
+            Nestled in the heart of the famed upper east side is a collection of ten spectacular residences. <br>
+            With breathtaking attention to detail and a carefully curated sense of style, these bespoke condominiums embrace the quiet confidence and classic elegance that define the neighborhood. Steps from the park and engulfed in culture, 33 east 74th street is quintessentially refined and uncommonly private, designed for the most discerning of buyers.
+         //- ###################################
+       aside.images
+        ul.gallery-thumbs
+          each thumb, ii in images2
+            li.thumbnail
+              a(rel='lightbox1', class='thumb-link small', data-effects='lightbox thumbnail', href="/images/temp/528-1.png")
+                img(src=thumb)
+                span.image-action View Gallery
+                //- ###################################
+        span.next
+          a.scroll-down
+      hr
+      div.debug-block
+        //- ###################################
+        aside.content-aside
+          blockquote.content-quote.
+            “Design is always about a marriage of the past with the new...from where we originated to what we discover in the end. It’s a relationship between practical functionality and timeless beauty.” <br>-Winston Kong, Principal, Champalimaud
+        //- ###################################
+        div.content-text
+          p.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio mauris, auctor ut varius non, tempus nec nisi. Quisque at tellus risus. Aliquam erat volutpat. Proin et dolor magna. Sed vel metus justo. Mauris eu metus massa. Duis viverra ultricies nisl, ut pharetra eros hendrerit non. Phasellus laoreet libero non eros rhoncus sed iaculis ante molestie. Etiam arcu purus, dictum a tincidunt id, ornare sed orci. Curabitur ornare ornare nulla quis tincidunt.
+      //- ###################################
+      div.debug-block
+        //- ###################################
+        aside.images
+          ul.gallery-thumbs
+            each thumb, i in images
+              li.thumbnail
+                a(rel='lightbox2', class='thumb-link small', data-effects='lightbox thumbnail', href=thumb)
+                  img(src=thumb)
+                  span View Gallery
+          small.gallery-tip Click on images to view larger
+          //- ###################################
+          span.next
+            a.scroll-down
+      hr
+      div.debug-block
+        //- ###################################
+        div.plan-gallery
+          a.i-left
+          figure.plan
+            a(rel='lightbox3', class='thumb-link big', data-effects='lightbox thumbnail', href='')
+              img(src=plans[1].ref, alt=plans[1].txt)
+              span.image-action View Floorplan
+            figcaption
+              span Click on floorplan to view larger
+              | &middot;
+              a(href="", rel="download") Download pdf
+          a.i-right
+        //- ###################################
+        div.plan-nav
+          img.content-image(src="http://fakeimg.pl/96x96/ccc/fff/?text=96x96")
+          ul.plans
+            each plan, j in plans
+              li: a.plan-link(href=plans[j].ref) #{plans[j].txt}
+          //- ###################################
+
+      hr
+      div.debug-block
+        //- ###################################
+        div.info-box
+          img.logo(src="/images/logo-outlines.png", height="200")
+          hr
+          p.
+            Originally designed for banker julian wainwright robbins and his wife sarah robbins, niece of cornelius vanderbilt, by famed upper east side architect grosvenor atterbury in 1901, the atterbury mansion remains true to its original splendor. the townhouse is 33 feet in width and includes a parlor floor with 12 foot ceilings. <br>this exceptional residence embraces the historical charm of the property while offering the highest quality modern living in a spacious and exquisitely designed interior. accessible through both the main lobby and its private entrance, the townhouse offers residents all the amenities of a condominium property while retaining the highest level of privacy and exclusivity.
+      //- ###################################
+      hr
+      div.debug-block
+        ul.team
+          each item, t in team_items
+            li.team-member
+              aside.content-aside
+                img.team-image(src=item.logo,title=item.name,alt=item.name + ' logo')
+              //- ###################################
+              div.content-text
+                h2.team-name= item.name
+                p= item.copy
+
+    hr
+    div.map
+      img(src="/images/temp/temp-map.png", alt="map")
+      main.legend
+        aside.content-aside
+          img.content-image(src="http://fakeimg.pl/136x94")
+        section.map-summary.content-text
+          p Paragraph about the neighborhood. ota cus et aliquia con rercil il iunt. min erferum vendunt offic tem ad quasperia dendel mo esequam esereptatem voles a nientestium incipis doles velit es seror rero iliquo od ut.
+          section.map-details
+            ol.map-points
+              each point, m in map
+                li: a(href="javascript:void(0);", data-point=m)= point
+

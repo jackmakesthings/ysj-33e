@@ -1,0 +1,30 @@
+// variables
+
+$dev:true;
+// $wrap-width:1006px;
+$wrap-width:columns(12);
+
+$blue:#263653;
+$darkblue:#081122;
+$aqua:#68c8c6;
+
+$sans: 'ps-regular', sans-serif;
+$sans_i: 'ps-italic', sans-serif;
+$sans-l: 'ps-light', sans-serif;
+$sans-li: 'ps-light-italic', sans-serif;
+
+
+$nav-bg: $blue;
+$nav-hover-bg: $blue;
+$nav-hover: $aqua;
+$nav-active:$aqua;
+$nav-height:4em;
+$logo-height:200px;
+
+
+$break:8;
+
+$logo:'img/33_logo.png';
+
+
+$break1: em(920,10);

@@ -1,0 +1,102 @@
+- var history;
+  page1 = "history"
+  hero1 = "/images/hero/history.jpg"
+  aside1 = "/images/aside/history.jpg"
+  copy1 = ""
+  history = {pagename:page1, hero:hero1, aside:aside1, copy:copy1}
+
+- var lifestyle, interior_images;
+  page2 = "lifestyle"
+  hero2 = "/images/hero/lifestyle.jpg"
+  aside2 = "“design is always about a marriage of the past with the new...from where we originated to what we discover in the end. it’s a relationship between practical functionality and timeless beauty.” - winston kong, principal, champalimaud"
+  copy2 = "the property’s lifestyle serve as extensions and expressions of this exclusive lifestyle, both anticipating needs and luxuriously providing necessary comforts. champalimaud’s grasp of how these residents live offers a timeless appeal with a transitional connection between the historical facade and contemporary interior. the designs reflect how we live today while retaining rich details from the past. the master suites of these luxurious history provides a sense of sanctuary upon arrival. the spacious suites include large walk-in closets, five fixture bathrooms, heated marble floors, private shower and lavatory and deep soaking bath tubs. from arriving into the elegant fully attended lobby, through grand double door entrances, and meticulously thoughtful floor plans, these ten history streamline the transition between past and present."
+  lifestyle = {pagename:page2, hero:hero2, aside:aside2, copy:copy2}
+
+  img1 = {thumb:"/images/galleries/lifestyle/lifestyle-1-sm.jpg", full: "/images/galleries/lifestyle/lifestyle-1-lg.jpg", label:"Gallery"}
+  img2 = {thumb:"/images/galleries/lifestyle/lifestyle-2-sm.jpg", full: "/images/galleries/lifestyle/lifestyle-2-lg.jpg", label:"Living Room"}
+  img3 = {thumb:"/images/galleries/lifestyle/lifestyle-3-sm.jpg", full: "/images/galleries/lifestyle/lifestyle-3-lg.jpg", label:"Kitchen"}
+  img4 = {thumb:"/images/galleries/lifestyle/lifestyle-4-sm.jpg", full: "/images/galleries/lifestyle/lifestyle-4-lg.jpg", label:"Master Bath"}
+  img5 = {thumb:"/images/galleries/lifestyle/lifestyle-5-sm.jpg", full: "/images/galleries/lifestyle/lifestyle-5-lg.jpg", label:"Second Bath"}
+  interior_images = [img1,img2,img3,img4,img5]
+
+- var floorplans, plans, plan1;
+  page3 = "architecture"
+  hero3 = "/images/hero/history.jpg"
+  aside3 = "/images/aside/history.jpg"
+  floorplans = {pagename:page3, hero:hero3, aside:aside3}
+
+  plan1 = {title:"Residence 3A", thumb:"/images/floorplans/Residence-3A-sm.jpg", full: "/images/floorplans/Residence-3A-lg.jpg", pdf:"../pdf/Residence-3A.pdf"}
+  plan2 = {title:"Residence 3B", thumb:"/images/floorplans/Residence-3B-sm.jpg", full: "/images/floorplans/Residence-3B-lg.jpg", pdf:"../pdf/Residence-3B.pdf"}
+  plan3 = {title:"Residence 4A", thumb:"/images/floorplans/Residence-4A-sm.jpg", full: "/images/floorplans/Residence-4A-lg.jpg", pdf:"../pdf/Residence-4A.pdf"}
+  plan4 = {title:"Residence 4B", thumb:"/images/floorplans/Residence-4B-sm.jpg", full: "/images/floorplans/Residence-4B-lg.jpg", pdf:"../pdf/Residence-4B.pdf"}
+  plan5 = {title:"Residence 5A", thumb:"/images/floorplans/Residence-5A-sm.jpg", full: "/images/floorplans/Residence-5A-lg.jpg", pdf:"../pdf/Residence-5A.pdf"}
+  plan6 = {title:"Residence 5B", thumb:"/images/floorplans/Residence-5B-sm.jpg", full: "/images/floorplans/Residence-5B-lg.jpg", pdf:"../pdf/Residence-5B.pdf"}
+  plan7 = {title:"Penthouse 1", thumb:"/images/floorplans/Penthouse-1-sm.jpg", full: "/images/floorplans/Penthouse-1-lg.jpg", pdf:"../pdf/Penthouse-1.pdf"}
+  plan8 = {title:"Penthouse 2", thumb:"/images/floorplans/Penthouse-2-sm.jpg", full: "/images/floorplans/Penthouse-2-lg.jpg", pdf:"../pdf/Penthouse-2.pdf"}
+
+  plans = [plan1, plan2, plan3, plan4, plan5, plan6, plan7, plan8]
+!!!
+html
+  head
+    title #{page} - 33e 74th Street
+    include _scripts
+  body
+    include _header
+    block content
+      div.bg.first(style="background-image:url(#{history.hero})")
+        a#history.
+      div.page.first
+        h1.page-header= history.pagename
+        main.page-content(role="main")
+          aside.content-aside
+            img.content-image(src!=history.aside)
+          div.content-text
+            p!= history.copy
+          span.next
+            a.scroll-down(href="#lifestyle").
+      a#lifestyle.
+      div.bg(style="background-image:url(#{lifestyle.hero})")
+      div.page.second
+        h1.page-header= lifestyle.pagename
+        main.page-content(role="main")
+          aside.content-aside
+            blockquote.content-quote!= lifestyle.aside
+          div.content-text
+            p!= lifestyle.copy
+          aside.images
+            ul.gallery-thumbs
+              - each image, i in interior_images
+                li.thumbnail
+                  a(rel='lightbox2', class='thumb-link small', data-effects='lightbox thumbnail', href!=image.full)
+                    img(src!=image.thumb)
+                    span View #{image.label}
+            small.gallery-tip Click on images to view larger
+          span.next
+            a.scroll-down(href="#floorplans")
+      a#floorplans.
+      div.bg.last(style="background-image:url(#{floorplans.hero})").
+      div.page.last
+        h1.page-header= floorplans.pagename
+        main.page-content(role="main")
+          div.plan-gallery
+            a.i-left
+            figure.plan
+              a(rel='lg-plans', class='thumb-link big', data-effects='lightbox thumbnail', href!=plans[0].full)
+                img(src!=plan1.thumb, alt!=plan1.title)
+                span.image-action View Floorplan
+              figcaption
+                span Click on floorplan to view larger
+                | &middot;
+                a(href!=plan1.pdf, rel="download") Download pdf
+            a.i-right
+          //- ###################################
+          div.plan-nav
+            img.content-image(src!=floorplans.aside)
+            ul.plans
+              each plan, j in plans
+                li: a.plan-link(href!=plan.full)= plan.title
+
+      //- div.showcase(data-img!=hero, style="background-image:url(#{hero})").
+      //- div.showcase.second(data-img!=lifestyle[1], style="background-image:url(#{lifestyle[1]})").
+  include _footer
+

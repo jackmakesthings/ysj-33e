@@ -1,0 +1,117 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns  : 12;
+$column-width   : em(90,10);
+$gutter-width   : 0em;
+$grid-padding   : 0em;
+$base-font-size:10px;
+
+$show-grid-backgrounds  : true;
+@include border-box-sizing;
+// Grid placeholders, mixins, etc
+
+
+$media-layout: 30em 60em;
+
+@mixin clear {
+	width:100%;
+	float:none;
+	clear:both;
+	&:before, &:after {
+		content:"";
+		display:table;
+		width:100%;
+		clear:both;
+		}
+}
+
+%row { @include clear; }
+%one { @include span-columns(1); }
+%two { @include span-columns(2); }
+%three { @include span-columns(3); }
+%four { @include span-columns(4); }
+%five { @include span-columns(5);
+	@include at-breakpoint(30em) { @include span-columns(12); }   }
+%six { @include span-columns(6);
+	@include at-breakpoint(30em) { @include span-columns(12); }  }
+%seven { @include span-columns(7);
+	@include at-breakpoint(30em) { @include span-columns(12); }   }
+%eight { @include span-columns(8); }
+%nine { @include span-columns(9); }
+%ten { @include span-columns(10); }
+%eleven { @include span-columns(11); }
+%twelve { @include span-columns(12); }
+%column { @include span-columns(12); }
+
+
+// alt!
+
+// %one,
+// %two,
+// %three,
+// %four,
+// %five,
+// %six,
+// %seven,
+// %eight,
+// %nine,
+// %ten,
+// %eleven,
+// %twelve { @extend %column;}
+
+// %one { width:columns(1); }
+// %two { width:columns(2); }
+// %three { width:columns(3); }
+// %four { width:columns(4); }
+// %five { width:columns(5); }
+// %six { width:columns(6); }
+// %seven { width:columns(7); }
+// %eight { width:columns(8); }
+// %nine { width:columns(9); }
+// %ten { width:columns(10); }
+// %eleven { width:columns(11); }
+// %twelve { width:columns(12); }
+//
+
+
+%container {
+  @include container;
+  @include susy-grid-background;
+}
+
+$dev: true;
+
+@if($dev == true) {
+	.two { @extend %two; }
+	.sixth { @include span-columns(2); }
+	.quarter { @include span-columns(3); }
+	.third { @include span-columns(4); }
+	.five { @extend %five; }
+	.half { @include span-columns(6); }
+	.seven { @extend %seven;}
+	.two-thirds { @include span-columns(8); }
+	.three-quarters { @include span-columns(9); }
+	.ten { @extend %ten; }
+	.full { @include span-columns(12); }
+
+	// .two, .sixth, .quarter, .third, .five,
+	// .half, .seven, .two-thirds, .three-quarters,
+	// .ten, .full { @extend %column; }
+
+	// .two, .sixth { width:columns(2); }
+	// .quarter { width:columns(3); }
+	// .third { width:columns(4); }
+	// .five { width:columns(5); }
+	// .half { width:columns(6); }
+	// .seven { width:columns(7); }
+	// .two-thirds { width:columns(8); }
+	// .three-quarters { width:columns(9); }
+	// .ten { width:columns(10); }
+	// .full { width:columns(12); }
+}

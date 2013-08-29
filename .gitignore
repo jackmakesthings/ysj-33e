@@ -12,3 +12,10 @@ logs
 results
 
 npm-debug.log
+
+*.sass-cache
+.tmp
+node_modules
+.DS_Store
+Thumbs.db
+*.*~
